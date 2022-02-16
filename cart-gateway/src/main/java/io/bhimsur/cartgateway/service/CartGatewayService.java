@@ -1,6 +1,5 @@
 package io.bhimsur.cartgateway.service;
 
-import io.bhimsur.cartgateway.model.CartRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +18,7 @@ public class CartGatewayService {
     @Value("${bhimsur.cart.routingKey}")
     private String routingKey;
 
-    public void send(CartRequest request) {
+    public void send(Object request) {
         log.info("send to cart service with request : {}", request);
         rabbitMqTemplate.convertAndSend(exchange, routingKey, request);
     }

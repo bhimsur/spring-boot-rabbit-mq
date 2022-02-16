@@ -1,6 +1,5 @@
 package io.bhimsur.cartgateway.controller;
 
-import io.bhimsur.cartgateway.model.CartRequest;
 import io.bhimsur.cartgateway.service.CartGatewayService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,7 +12,7 @@ public class CartGatewayController {
     private CartGatewayService service;
 
     @PostMapping("/addtocart")
-    public boolean addToCart(@RequestBody CartRequest request) {
+    public boolean addToCart(@RequestBody Object request) {
         service.send(request);
         return true;
     }
