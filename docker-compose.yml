@@ -9,24 +9,24 @@ services:
     ports:
       - '5672:5672'
       - '15672:15672'
-    networks:
-      - mq
-  backend:
-    container_name: "springboot"
-    build:
-      context: .
-      dockerfile: Dockerfile
-    restart: always
-    ports:
-      - '8080:8080'
-    depends_on:
-      - rabbitmq
-    environment:
-      - SPRING_RABBITMQ_HOST=rabbitmq
-      - SPRING_RABBITMQ_PORT=5672
-      - SPRING_RABBITMQ_USERNAME=bhimsur
-      - SPRING_RABBITMQ_PASSWORD=Asdf123!
-    networks:
-      - mq
-networks:
-  mq:
+#    networks:
+#      - mq
+#  backend:
+#    container_name: "springboot"
+#    build:
+#      context: .
+#      dockerfile: Dockerfile
+#    restart: always
+#    ports:
+#      - '8080:8080'
+#    depends_on:
+#      - rabbitmq
+#    environment:
+#      - SPRING_RABBITMQ_HOST=rabbitmq
+#      - SPRING_RABBITMQ_PORT=5672
+#      - SPRING_RABBITMQ_USERNAME=bhimsur
+#      - SPRING_RABBITMQ_PASSWORD=Asdf123!
+#    networks:
+#      - mq
+#networks:
+#  mq:
