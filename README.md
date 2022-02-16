@@ -10,7 +10,7 @@ try to learn message broker using rabbitmq and spring boot
 
 ## TODO
 - [x] Publish message
-- [ ] Configure listeners to consume messages
+- [x] Configure listeners to consume messages
 - [ ] Implement exchange types
 - [ ] Retry and error handling
 
